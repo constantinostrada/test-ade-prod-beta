@@ -1,0 +1,25 @@
+{
+  "name": "linkdoc",
+  "version": "0.1.0",
+  "description": "Find broken links in a repository's markdown",
+  "type": "module",
+  "bin": {
+    "linkdoc": "dist/src/cli.js"
+  },
+  "files": [
+    "dist/src"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/test/",
+    "test:offline": "npm run build && node --test dist/test/parser.test.js dist/test/resolver.test.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "typescript": "^5.9.3"
+  }
+}
